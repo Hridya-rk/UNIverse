@@ -8,6 +8,9 @@ export default function LostAndFound({ user }) {
   const [itemDescription, setItemDescription] = useState('');
   const [itemLocation, setItemLocation] = useState('');
   const [itemImage, setItemImage] = useState(null);
+  const [contactName, setContactName] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
 
   useEffect(() => {
     const lostItemsRef = ref(database, 'lostItems');
@@ -41,12 +44,18 @@ export default function LostAndFound({ user }) {
       location: itemLocation,
       imageUrl: imageUrl,
       reportedBy: user.email,
+      contactName: contactName,
+      contactPhone: contactPhone,
+      contactEmail: contactEmail,
       timestamp: Date.now()
     });
     
     setItemDescription('');
     setItemLocation('');
     setItemImage(null);
+    setContactName('');
+    setContactPhone('');
+    setContactEmail('');
     // Reset file input
     document.getElementById('imageInput').value = '';
   };
@@ -105,6 +114,30 @@ export default function LostAndFound({ user }) {
               required
             />
             <input
+              type="text"
+              value={contactName}
+              onChange={(e) => setContactName(e.target.value)}
+              placeholder="👤 Your name"
+              className="input-bubble"
+              required
+            />
+            <input
+              type="tel"
+              value={contactPhone}
+              onChange={(e) => setContactPhone(e.target.value)}
+              placeholder="📱 Phone number"
+              className="input-bubble"
+              required
+            />
+            <input
+              type="email"
+              value={contactEmail}
+              onChange={(e) => setContactEmail(e.target.value)}
+              placeholder="📧 Email address"
+              className="input-bubble"
+              required
+            />
+            <input
               id="imageInput"
               type="file"
               accept="image/*"
@@ -157,8 +190,17 @@ export default function LostAndFound({ user }) {
               <p style={{ marginBottom: '10px' }}>
                 <strong>📍 Location:</strong> {item.location}
               </p>
-              <p style={{ fontSize: '0.9em', color: '#666', marginBottom: '15px' }}>
+              <p style={{ fontSize: '0.9em', color: '#666', marginBottom: '10px' }}>
                 <strong>Reported by:</strong> {item.reportedBy}
+              </p>
+              <p style={{ fontSize: '0.9em', color: '#666', marginBottom: '10px' }}>
+                <strong>👤 Contact:</strong> {item.contactName}
+              </p>
+              <p style={{ fontSize: '0.9em', color: '#666', marginBottom: '10px' }}>
+                <strong>📱 Phone:</strong> {item.contactPhone}
+              </p>
+              <p style={{ fontSize: '0.9em', color: '#666', marginBottom: '15px' }}>
+                <strong>📧 Email:</strong> {item.contactEmail}
               </p>
               <button onClick={() => markAsFound(item.id)} className="found-button">
                 ✓ Found!
