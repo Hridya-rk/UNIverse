@@ -142,9 +142,9 @@ export default function Events() {
             justifyContent: 'flex-start',
             width: '100%'
           }}
-          onMouseEnter={() => setHoveredId(event.id)}
-          onMouseLeave={() => setHoveredId(null)}
-          className="fade-in-up">
+            onMouseEnter={() => setHoveredId(event.id)}
+            onMouseLeave={() => setHoveredId(null)}
+            className="fade-in-up">
             {/* Sticky note fold effect */}
             <div style={{
               position: 'absolute',
