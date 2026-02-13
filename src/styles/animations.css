@@ -1,0 +1,318 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Righteous&display=swap');
+
+/* Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { 
+    transform: rotate(-3deg); 
+  }
+  50% { 
+    transform: rotate(3deg); 
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: scale(1.05); 
+    opacity: 0.8; 
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes honeycomb {
+  0% { 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+    transform: scale(0.8); 
+  }
+  50% { 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+    transform: scale(1.1); 
+  }
+  100% { 
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+    transform: scale(1); 
+  }
+}
+
+/* Animation Classes */
+.bee { 
+  animation: float 3s ease-in-out infinite; 
+}
+
+.bubble { 
+  animation: bounce 2s ease-in-out infinite; 
+}
+
+.wiggle { 
+  animation: wiggle 1s ease-in-out infinite; 
+}
+
+.fade-in-up { 
+  animation: fadeInUp 0.6s ease-out forwards; 
+}
+
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(135deg, #ffd93d 0%, #ffb347 100%);
+  animation: honeycomb 2s ease-in-out infinite;
+}
+
+/* Button Styles */
+.feature-button {
+  background: linear-gradient(135deg, #9b59b6 0%, #e0b3ff 100%);
+  border: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(155, 89, 182, 0.3);
+  margin: 15px;
+  font-family: 'Fredoka', cursive;
+}
+
+.feature-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(155, 89, 182, 0.5);
+}
+
+.feature-button:active {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Input Styles */
+.input-bubble {
+  border: 3px solid #e0b3ff;
+  border-radius: 25px;
+  padding: 15px 25px;
+  font-size: 1.1em;
+  background: white;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Fredoka', cursive;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-bubble:focus {
+  border-color: #9b59b6;
+  box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+  transform: scale(1.02);
+}
+
+.input-bubble::placeholder {
+  color: #bbb;
+}
+
+/* Chat Bubble Styles */
+.chat-bubble {
+  background: linear-gradient(135deg, #9b59b6 0%, #b794d6 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 20px 20px 5px 20px;
+  margin: 10px 0;
+  max-width: 70%;
+  animation: fadeInUp 0.3s ease-out;
+  box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2);
+  word-wrap: break-word;
+}
+
+/* Notepad Styles */
+.notepad {
+  background: #fff9e6;
+  border: 3px solid #ffd93d;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notepad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.notepad::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 3px;
+  height: 100%;
+  background: #ffb3ba;
+  opacity: 0.3;
+}
+
+/* Found Button Styles */
+.found-button {
+  background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+  font-family: 'Fredoka', cursive;
+  font-size: 1em;
+}
+
+.found-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
+}
+
+.found-button:active {
+  transform: scale(1.05);
+}
+
+/* Section Styles */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f0ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #9b59b6 0%, #e0b3ff 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8b49a6 0%, #d0a3ef 100%);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Fredoka', 'Comic Neue', cursive;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feature-button {
+    font-size: 1em;
+    padding: 15px 30px;
+    margin: 10px;
+  }
+
+  .input-bubble {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
+
+  .chat-bubble {
+    max-width: 85%;
+  }
+
+  .notepad {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .section {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 3em !important;
+  }
+
+  h2 {
+    font-size: 2em !important;
+  }
+
+  h3 {
+    font-size: 1.5em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-button {
+    font-size: 0.9em;
+    padding: 12px 25px;
+  }
+
+  h1 {
+    font-size: 2.5em !important;
+  }
+
+  h2 {
+    font-size: 1.8em !important;
+  }
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
