@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
 
 export default function AttendancePredictor() {
-  const [currentAttendance, setCurrentAttendance] = useState('');
+  const [hoursAttended, setHoursAttended] = useState('');
   const [totalHours, setTotalHours] = useState('');
   const [riskResult, setRiskResult] = useState(null);
 
   const calculateAttendanceRisk = () => {
-    const current = parseFloat(currentAttendance);
+    const attended = parseFloat(hoursAttended);
     const total = parseFloat(totalHours);
     
-    if (isNaN(current) || isNaN(total) || total <= 0) {
+    if (isNaN(attended) || isNaN(total) || total <= 0) {
       alert('Please enter valid numbers');
       return;
     }
 
-    if (current < 0 || current > 100) {
-      alert('Attendance percentage must be between 0 and 100');
+    if (attended < 0 || attended > total) {
+      alert('Hours attended cannot be negative or exceed total hours');
       return;
     }
     
-    if (current >= 75) {
+    // Calculate current attendance percentage using equation: (attended / total) * 100
+    const currentPercentage = (attended / total) * 100;
+    
+    // Calculate required hours: 75% of total hours
+    const requiredHours = 0.75 * total;
+    
+    // Calculate shortage: requiredHours - attended hours
+    const shortage = requiredHours - attended;
+    
+    if (shortage <= 0) {
       setRiskResult({
         status: 'safe',
         message: 'You are safe! Keep it up! 🎉',
-        percentage: current,
-        details: `You have ${(current * total / 100).toFixed(1)} hours out of ${total} total hours.`
+        percentage: currentPercentage.toFixed(2),
+        details: `You have attended ${attended.toFixed(1)} out of ${total} hours. No shortage!`
       });
     } else {
-      const currentHours = (current * total) / 100;
-      const requiredHours = 0.75 * total;
-      const hoursNeeded = Math.ceil(requiredHours - currentHours);
-      const riskLevel = current < 65 ? 'high' : 'medium';
+      const riskLevel = currentPercentage < 65 ? 'high' : 'medium';
       
       setRiskResult({
         status: riskLevel,
-        message: `Risk of shortage! You need ${hoursNeeded} more hours to reach 75%`,
-        percentage: current,
-        details: `Current: ${currentHours.toFixed(1)} hours. Required: ${requiredHours.toFixed(1)} hours.`
+        message: `Shortage Alert! You are short by ${shortage.toFixed(1)} hours`,
+        percentage: currentPercentage.toFixed(2),
+        details: `Current attendance: ${attended} hours (${currentPercentage.toFixed(2)}%). Required: ${requiredHours.toFixed(1)} hours.`
       });
     }
   };
@@ -72,17 +78,16 @@ export default function AttendancePredictor() {
               marginBottom: '10px',
               fontWeight: '600'
             }}>
-              Current Attendance (%)
+              Hours Attended
             </label>
             <input
               type="number"
-              value={currentAttendance}
-              onChange={(e) => setCurrentAttendance(e.target.value)}
+              value={hoursAttended}
+              onChange={(e) => setHoursAttended(e.target.value)}
               placeholder="e.g., 70"
               className="input-bubble"
               style={{ width: '100%' }}
               min="0"
-              max="100"
               step="0.1"
             />
           </div>
@@ -95,7 +100,7 @@ export default function AttendancePredictor() {
               marginBottom: '10px',
               fontWeight: '600'
             }}>
-              Total Hours
+              Total Hours in Course
             </label>
             <input
               type="number"
@@ -105,6 +110,7 @@ export default function AttendancePredictor() {
               className="input-bubble"
               style={{ width: '100%' }}
               min="1"
+              step="0.1"
             />
           </div>
           
@@ -151,10 +157,11 @@ export default function AttendancePredictor() {
             💡 How it works:
           </h4>
           <ul style={{ color: '#555', lineHeight: '1.8', paddingLeft: '20px' }}>
-            <li>Minimum required attendance: <strong>75%</strong></li>
-            <li>Green (Safe): 75% or above</li>
-            <li>Orange (Medium): 65% - 74%</li>
-            <li>Red (High Risk): Below 65%</li>
+            <li>Equation: Current % = (Hours Attended / Total Hours) × 100</li>
+            <li>Required Hours: 75% of Total Hours</li>
+            <li>Shortage Calculation: Required Hours - Hours Attended</li>
+            <li>If surplus ≥ 0: <strong>Safe</strong> ✅</li>
+            <li>If shortage exists: <strong>Risk Alert</strong> ⚠️</li>
           </ul>
         </div>
       </div>

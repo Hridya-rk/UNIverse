@@ -7,6 +7,7 @@ import ChatRoom from './components/ChatRoom';
 import LostAndFound from './components/LostAndFound';
 import Events from './components/Events';
 import BusTimings from './components/BusTimings';
+import AttendancePredictor from './components/AttendencePredictor';
 import ThankYou from './components/ThankYou';
 
 export default function App() {
@@ -63,6 +64,10 @@ export default function App() {
 
           <div ref={el => sectionsRef.current['bus'] = el}>
             <BusTimings />
+          </div>
+
+          <div ref={el => sectionsRef.current['attendance'] = el}>
+            <AttendancePredictor />
           </div>
 
           <div ref={el => sectionsRef.current['thankyou'] = el}>
