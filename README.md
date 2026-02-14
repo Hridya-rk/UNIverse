@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./img.png" alt="Project Banner" width="100%">
+  <img src="./scrn 1.png" alt="Project Banner" width="100%">
 </p>
 
 # UNIverse - a unified digital campus community ecosystem 🎯
