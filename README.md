@@ -2,27 +2,27 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# UNIverse - a unified digital campus community ecosystem 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: Commit and Cry
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: Fathima Henna KC - SCMS School of Engineering and Technology
+- Member 2: Hridya R - SCMS School of Engineering and Technology
 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://un-iverse-mu.vercel.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+UNIverse is a comprehensive campus utilities platform that integrates essential student services into one beautiful, animated web application.UNIverse brings together lost & found, attendance tracking, event management, real-time chat, and bus schedules in a single, easy-to-use interface.
 
 ### The Problem statement
-[What problem are you solving?]
+Students across campuses struggle with fragmented services - lost items go unreported, attendance tracking is manual and error-prone, important events get missed, communication is scattered across multiple platforms, and bus timings are hard to find. This leads to inefficiency, missed opportunities, and a disconnected campus community.
 
 ### The Solution
-[How are you solving it?]
+UNIverse solves this by providing a centralized, real-time platform where students can report and find lost items with image uploads, predict attendance shortage risks, stay updated on campus events, communicate in a common chat room, and access bus schedules instantly. All features are backed by Firebase for real-time synchronization and data persistence, wrapped in an engaging, bubbly UI that makes campus life sweeter.
 
 ---
 
@@ -31,10 +31,16 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used:JavaScript (ES6+), HTML5, CSS3
+- Frameworks used: [React 18.2.0, Vite 5.0.8]
+- Libraries used: [Firebase 10.7.1 (Authentication, Realtime Database, Storage)
+React DOM 18.2.0
+Google Fonts (Fredoka, Righteous)]
+- Tools used: [VS Code (Development)
+Git & GitHub (Version Control)
+Vercel (Deployment)
+Firebase Console (Backend Management)
+npm (Package Management)]
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +52,35 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Real-time Common Chat Room
+
+Live messaging with instant synchronization across all users
+Message history persistence in Firebase Realtime Database
+User identification by email
+Bubbly chat interface with color-coded messagesDescription]
+- Feature 2: [Lost & Found System
+
+Report lost items with descriptions, locations, and images
+Image upload to Firebase Storage with URL generation
+Real-time updates when items are posted or found
+One-click "Found" button to remove items from database
+Visual grid layout with image previews]
+- Feature 3: [Attendance Risk Predictor
+
+Smart calculation of attendance shortage risk
+75% minimum attendance threshold
+Color-coded risk levels (Safe/Medium/High)
+Calculates exact hours needed to reach target
+Visual feedback with percentage display
+
+
+]
+- Feature 4: [Important Events Calendar
+
+Notepad-style event cards with visual appeal
+Event details with dates and descriptions
+Organized grid layout for easy browsing
+Animated entrance effects]
 
 ---
 
@@ -59,12 +90,22 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[# Clone the repository
+git clone https://github.com/Hridya-rk/UNIverse.git
+
+# Navigate to project directory
+cd UNIverse
+
+# Install dependencies
+npm install
+
+# Install Firebase (if not automatically installed)
+npm install firebase]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[Run commands - npm run dev]
 ```
 
 ### For Hardware:
@@ -83,14 +124,27 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![<img width="1898" height="875" alt="scrn 1" src="https://github.com/user-attachments/assets/59925432-5665-46fc-90bb-06fe9797e466" />
+
+](Add screenshot 1 here with proper name)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![<img width="1894" height="869" alt="scrn2" src="https://github.com/user-attachments/assets/840e88c6-400f-4d9e-aaaf-85c853289f8b" />
+](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![<img width="1890" height="840" alt="scrn3" src="https://github.com/user-attachments/assets/c082d9bf-d7b0-44b6-a533-cbec6fc1ac05" />
+](Add screenshot 3 here with proper name)
 *Add caption explaining what this shows*
+
+<img width="1886" height="843" alt="scrn4" src="https://github.com/user-attachments/assets/a78c7b54-a97b-47a0-a29f-48abe4ee3fe2" />
+<img width="1894" height="857" alt="scrn 5" src="https://github.com/user-attachments/assets/1b505ea6-209b-4240-a390-e15e3ebb8086" />
+<img width="1890" height="857" alt="scrn 6" src="https://github.com/user-attachments/assets/6e452666-a550-47ca-8394-edccd2566371" />
+<img width="1831" height="839" alt="scrn 7" src="https://github.com/user-attachments/assets/49b01c99-3ea2-4fc0-a7ab-557fec5479de" />
+<img width="1894" height="852" alt="scrn 8" src="https://github.com/user-attachments/assets/9cfd575f-d7b9-4819-a688-30aa61c9443f" />
+<img width="1874" height="856" alt="scrn 9" src="https://github.com/user-attachments/assets/907086c1-bea3-4ff7-b38e-aa41569bf94e" />
+
+
 
 #### Diagrams
 
