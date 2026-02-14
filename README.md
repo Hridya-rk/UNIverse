@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="./scrn 1.png" alt="Project Banner" width="100%">
+  <img width="1898" height="875" alt="scrn 1" src="https://github.com/user-attachments/assets/a51cbb40-8126-4325-a6ae-f39c01d255a8" />
+
 </p>
 
 # UNIverse - a unified digital campus community ecosystem 🎯
