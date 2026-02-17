@@ -9,6 +9,7 @@ import Events from './components/Events';
 import BusTimings from './components/BusTimings';
 import AttendancePredictor from './components/AttendencePredictor';
 import ThankYou from './components/ThankYou';
+import AdminChatClear from './components/AdminChatClear';
 
 export default function App() {
   const [currentSection, setCurrentSection] = useState('intro');
@@ -52,6 +53,10 @@ export default function App() {
         <>
           <div ref={el => sectionsRef.current['chat'] = el}>
             <ChatRoom user={user} />
+          </div>
+
+          <div>
+            <AdminChatClear />
           </div>
 
           <div ref={el => sectionsRef.current['lostfound'] = el}>
